@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy 7th Birthday, Rustin! 🏎️</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- TOP SPEED STRIPE -->
+  <div class="speed-stripe"></div>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-left">
+      <div class="photo-frame">
+        <div class="photo-ring">
+          <img id="hero-photo" src="birthday-boy.jpg" alt="Rustin"
+               onerror="this.src='placeholder.svg'" />
+        </div>
+        <div class="wheel wheel-tl"></div>
+        <div class="wheel wheel-tr"></div>
+        <div class="wheel wheel-bl"></div>
+        <div class="wheel wheel-br"></div>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="flag-row">🏁 🏁 🏁</div>
+      <h1>Happy<br/><span class="big-num">7th</span><br/>Birthday<br/>Rustin!</h1>
+      <p class="hero-sub">Vroom vroom — you're officially <strong>7!</strong> 🚗💨</p>
+      <p class="hero-date">🗓️ June 2026</p>
+      <div class="car-badge">🏎️ RACE DAY CHAMPION</div>
+    </div>
+
+    <!-- decorative road at bottom -->
+    <div class="hero-road">
+      <div class="road-line"></div>
+    </div>
+  </header>
+
+  <!-- TIRE TRACK DIVIDER -->
+  <div class="tire-divider">
+    <span>🏎️</span>
+  </div>
+
+  <!-- GUEST LIST -->
+  <section class="section" id="guests">
+    <div class="section-header orange">
+      <h2>🏁 The Pit Crew</h2>
+      <p class="section-sub">Friends &amp; family celebrating with Rustin!</p>
+    </div>
+    <div class="guest-grid" id="guest-grid"></div>
+  </section>
+
+  <!-- TIRE TRACK DIVIDER -->
+  <div class="tire-divider">
+    <span>🚗</span>
+  </div>
+
+  <!-- MESSAGES BOARD -->
+  <section class="section alt" id="messages">
+    <div class="section-header blue">
+      <h2>🎂 Leave a Birthday Wish</h2>
+      <p class="section-sub">Sign the virtual birthday card!</p>
+    </div>
+    <form id="message-form" class="card-form">
+      <input type="text" id="msg-name" placeholder="Your name" required maxlength="60" />
+      <textarea id="msg-text" placeholder="Write your birthday message..." required maxlength="500" rows="4"></textarea>
+      <button type="submit">Post Message 🎈</button>
+    </form>
+    <div id="messages-list" class="messages-list"></div>
+  </section>
+
+  <!-- TIRE TRACK DIVIDER -->
+  <div class="tire-divider">
+    <span>🏁</span>
+  </div>
+
+  <!-- GALLERY -->
+  <section class="section" id="gallery">
+    <div class="section-header green">
+      <h2>📸 Photo Gallery</h2>
+      <p class="section-sub">Upload your birthday photos and memories!</p>
+    </div>
+    <form id="photo-form" class="card-form">
+      <input type="text" id="photo-name" placeholder="Your name" required maxlength="60" />
+      <label class="file-label">
+        <input type="file" id="photo-file" accept="image/*" required />
+        <span id="file-label-text">🖼️ Choose a photo…</span>
+      </label>
+      <button type="submit">Upload Photo 📷</button>
+    </form>
+    <div class="gallery-scroll-wrapper">
+      <div id="gallery-grid" class="gallery-grid"></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-flags">🏁🏎️🏁🚗🏁🏎️🏁</div>
+    <p>Made with ❤️ for Rustin's 7th birthday — Start your engines!</p>
+    <div class="footer-flags">🏁🚙🏁🏎️🏁🚗🏁</div>
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox" class="lightbox">
+    <button id="lightbox-close">✕</button>
+    <div class="lightbox-content">
+      <img id="lightbox-img" src="" alt="Full size photo" />
+      <p id="lightbox-name"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
