@@ -6,8 +6,13 @@ const fs      = require('fs');
 const app  = express();
 const PORT = process.env.PORT || 3000;
 
-const dataFile   = path.join(__dirname, 'data.json');
-const uploadsDir = path.join(__dirname, 'public', 'uploads');
+// On Railway the persistent volume is mounted at /data.
+// Locally we fall back to the project folder.
+const DATA_DIR   = process.env.DATA_DIR || __dirname;
+const dataFile   = path.join(DATA_DIR, 'data.json');
+const uploadsDir = process.env.DATA_DIR
+  ? path.join(DATA_DIR, 'uploads')
+  : path.join(__dirname, 'public', 'uploads');
 
 fs.mkdirSync(uploadsDir, { recursive: true });
 
@@ -37,6 +42,8 @@ const upload = multer({
 
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
+// Serve uploads from the persistent volume (or public/uploads locally)
+app.use('/uploads', express.static(uploadsDir));
 
 app.get('/api/data', (req, res) => res.json(loadData()));
 

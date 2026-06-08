@@ -42,7 +42,6 @@
         <div class="wheel wheel-br"></div>
       </div>
     </div>
-
     <div class="hero-right">
       <div class="flag-row">🏁 🏁 🏁</div>
       <h1>Happy<br/><span class="big-num">7th</span><br/>Birthday<br/>Rustin!</h1>
@@ -50,17 +49,11 @@
       <p class="hero-date">🗓️ June 2026</p>
       <div class="car-badge">🏎️ RACE DAY CHAMPION</div>
     </div>
-
-    <!-- decorative road at bottom -->
-    <div class="hero-road">
-      <div class="road-line"></div>
-    </div>
+    <div class="hero-road"><div class="road-line"></div></div>
   </header>
 
   <!-- TIRE TRACK DIVIDER -->
-  <div class="tire-divider">
-    <span>🏎️</span>
-  </div>
+  <div class="tire-divider"><span>🏎️</span></div>
 
   <!-- GUEST LIST -->
   <section class="section" id="guests">
@@ -72,9 +65,7 @@
   </section>
 
   <!-- TIRE TRACK DIVIDER -->
-  <div class="tire-divider">
-    <span>🚗</span>
-  </div>
+  <div class="tire-divider"><span>🚗</span></div>
 
   <!-- MESSAGES BOARD -->
   <section class="section alt" id="messages">
@@ -91,27 +82,31 @@
   </section>
 
   <!-- TIRE TRACK DIVIDER -->
-  <div class="tire-divider">
-    <span>🏁</span>
-  </div>
+  <div class="tire-divider"><span>🏁</span></div>
 
-  <!-- GALLERY -->
+  <!-- PHOTO UPLOAD + ALBUMS -->
   <section class="section" id="gallery">
     <div class="section-header green">
-      <h2>📸 Photo Gallery</h2>
-      <p class="section-sub">Upload your birthday photos and memories!</p>
+      <h2>📸 Photo Albums</h2>
+      <p class="section-sub">Upload your photos — each person gets their own album!</p>
     </div>
+
+    <!-- Upload form -->
     <form id="photo-form" class="card-form">
       <input type="text" id="photo-name" placeholder="Your name" required maxlength="60" />
       <label class="file-label">
-        <input type="file" id="photo-file" accept="image/*" required />
-        <span id="file-label-text">🖼️ Choose a photo…</span>
+        <input type="file" id="photo-file" accept="image/*" multiple required />
+        <span id="file-label-text">🖼️ Choose photos… (select multiple!)</span>
       </label>
-      <button type="submit">Upload Photo 📷</button>
+      <div id="upload-progress" class="upload-progress" style="display:none">
+        <div id="upload-bar" class="upload-bar"></div>
+        <span id="upload-status"></span>
+      </div>
+      <button type="submit">Upload Photos 📷</button>
     </form>
-    <div class="gallery-scroll-wrapper">
-      <div id="gallery-grid" class="gallery-grid"></div>
-    </div>
+
+    <!-- Album cards grid -->
+    <div id="albums-grid" class="albums-grid"></div>
   </section>
 
   <footer>
@@ -120,13 +115,31 @@
     <div class="footer-flags">🏁🚙🏁🏎️🏁🚗🏁</div>
   </footer>
 
+  <!-- FOLDER MODAL -->
+  <div id="folder-modal" class="folder-modal">
+    <div class="folder-header">
+      <h3 id="folder-title"></h3>
+      <button id="folder-close">✕</button>
+    </div>
+    <div class="folder-body">
+      <button class="folder-arrow" id="folder-prev">&#8249;</button>
+      <div class="folder-strip-wrapper">
+        <div class="folder-strip" id="folder-strip"></div>
+      </div>
+      <button class="folder-arrow" id="folder-next">&#8250;</button>
+    </div>
+  </div>
+
   <!-- LIGHTBOX -->
   <div id="lightbox" class="lightbox">
     <button id="lightbox-close">✕</button>
+    <button class="lb-arrow" id="lb-prev">&#8249;</button>
     <div class="lightbox-content">
       <img id="lightbox-img" src="" alt="Full size photo" />
       <p id="lightbox-name"></p>
+      <p id="lightbox-counter" class="lb-counter"></p>
     </div>
+    <button class="lb-arrow" id="lb-next">&#8250;</button>
   </div>
 
   <script src="script.js"></script>
